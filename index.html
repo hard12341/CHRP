@@ -1495,10 +1495,10 @@
                     <button class="btn" onclick="openJobModal('ems')">تقديم الآن</button>
                 </div>
                 
-                <div class="job-card" id="justice-job">
+                <div class="job-card" id="staff-job">
                     <h3><i class="fas fa-gavel"></i> تقديم الادارة</h3>
                     <p>انضم إلى المحامين وكن صوت العدالة</p>
-                    <button class="btn" onclick="openJobModal('justice')">تقديم الآن</button>
+                    <button class="btn" onclick="openJobModal('staff')">تقديم الآن</button>
                 </div>
             </div>
         </div>
@@ -1573,7 +1573,7 @@
         const jobConfig = {
             police: { open: true, webhook: "https://discord.com/api/webhooks/1407450702703235092/blHGaZePIHwb_k3QptYzjWsze8uLyGbSgWUBBob2izg4wQ8RO2LSwvFRHJD7upMxLhJU" },
             ems: { open: true, webhook: "https://discord.com/api/webhooks/1407451547260162248/Ijx4fBY-L_DoHVoGNzWu9nj3_pVk0VtASJLnogFYoxGL7UAAvfhY7ipqXm5skvYKN0Dp" },
-            justice: { open: true, webhook: "https://discord.com/api/webhooks/1409627765807906936/iTdd39Mkkg53hX-cCAI8EOYRQCRdZgbdHxOWPtao_LJVPbhDgeqffAFLzXGb39L4jssR" }
+            staff: { open: true, webhook: "https://discord.com/api/webhooks/1409627765807906936/iTdd39Mkkg53hX-cCAI8EOYRQCRdZgbdHxOWPtao_LJVPbhDgeqffAFLzXGb39L4jssR" }
         };
 
         // Show Page Function
@@ -1666,7 +1666,7 @@
             switch(jobType) {
                 case 'police': return 'LSPD';
                 case 'ems': return 'EMS';
-                case 'justice': return 'Justice';
+                case 'staff': return 'staff';
                 default: return 'وظيفة';
             }
         }
@@ -1706,7 +1706,7 @@
             
             // Prepare the data to send to Discord webhook
             const data = {
-                content: `**تقديم جديد لـ ${jobTitle}**\n\n**اسم الشخصية:** ${characterName}\n**ايدي الشخصية:** ${characterId}\n**رقم الجوال:** ${phoneNumber}\n**يوزر الدسكورد:** ${discordUser}`
+                content: `**New Apply ${jobTitle}**\n\n**Name :** ${characterName}\n**Steam :** ${characterId}\n**Your Available Time :** ${phoneNumber}\n**Copy Id :** ${discordUser}`
             };
             
             // Send data to Discord webhook
